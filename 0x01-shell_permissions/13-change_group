@@ -1,2 +1,2 @@
 #!/bin/bash
-chgrp ismail hello
+chgrp school hello
