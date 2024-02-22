@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# A Bash script that displays numbers from 1 to 100.
 for number in $(seq 1 1 100); do
 	if [ $((number % 3)) -eq 0 ] && [ $((number % 5)) -eq 0 ]; then
 		echo "FizzBuzz"
