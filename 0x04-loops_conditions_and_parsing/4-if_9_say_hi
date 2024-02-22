@@ -3,11 +3,10 @@
 # displays Best School and then Hi on a new line.
 count=1
 while [ $count -le 10 ]; do
+	echo "Best School"
 	if test $count -eq 9
 	then
 		echo "Hi"
-	else
-		echo "Best School"
 	fi
 	((count++))
 done
