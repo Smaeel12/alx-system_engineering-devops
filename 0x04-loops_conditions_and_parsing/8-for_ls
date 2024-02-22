@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# This script is diplaying the content of the current directory in a list format
+# Where only the part of the name after the first dash is displayed
+
+# Using regex
+# in one line
+
+for file in *; do echo "${file##*-}"; done
+
+#for file in *; do
+#	echo "${file##*-}"
+#done
+
+# you can use: cut / awk /sed / expr substr / grep / tr
+#________ OLD VERSION _______#
+	#for file in $(ls); do
+	#	lenght=${#file}
+	#	for ((i = 0; i < lenght; i++)); do
+	#		if [ ${file:i:1} = "-" ]; then
+	#			echo ${file:i+1:lenght}
+	#		fi
+	#	done
+	#done
+
+#________ OTHER WAYS TO ITERATE OVER FILES ________#
+	# for file in $PWD/*; do
+	# 	echo $(basename $file)
+	# done
+	
+	# for file in *
+	# 	 echo $file
+	# done
