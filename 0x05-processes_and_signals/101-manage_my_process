@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+if [ $# -eq 1 ]
+then
+	echo "good"
+else
+	echo "Usage: manage_my_process {start|stop|restart}"
+fi
