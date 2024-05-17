@@ -7,4 +7,4 @@ fi
 
 USER="$1"
 
-su -c "whoami" "$USER"
+sudo -u whoami "$USER"
