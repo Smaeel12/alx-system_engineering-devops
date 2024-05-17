@@ -5,6 +5,6 @@ if [ "$#" -ne 1 ]; then
   exit 1
 fi
 
-USER=$1
+USER="$1"
 
-su -c "whoami" $USER
+su -c "whoami" "$USER"

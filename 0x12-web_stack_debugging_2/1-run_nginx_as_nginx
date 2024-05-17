@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Update the Nginx configuration to listen on port 8080
 sed -i 's/listen 80 default_server;/listen 8080 default_server;/' /etc/nginx/sites-available/default
 sed -i 's/listen \[::\]:80 default_server;/listen \[::\]:8080 default_server;/' /etc/nginx/sites-available/default
