@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+sed -i 's/listen 80;/listen 8080;/' /etc/nginx/sites-available/default
+sed -i 's/listen \[::\]:80;/listen \[::\]:8080;/' /etc/nginx/sites-available/default
+sed -i 's/user www-data;/user nginx;/' /etc/nginx/nginx.conf
+chown -R nginx:nginx /var/lib/nginx /var/log/nginx /var/run/nginx
+service nginx restart
+
