@@ -13,9 +13,9 @@ Example:
 Attributes:
     None
 """
-import sys
-import requests
 import json
+import requests
+import sys
 
 
 def get_employee_name(user_id):

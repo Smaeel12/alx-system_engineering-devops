@@ -13,11 +13,9 @@ Example:
 Attributes:
     None
 """
-
-
-import sys
-import requests
 import csv
+import requests
+import sys
 
 
 def get_employee_name(user_id):

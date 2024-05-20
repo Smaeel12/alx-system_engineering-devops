@@ -1,4 +1,17 @@
 #!/usr/bin/python3
+"""
+Module to retrieve and display TODO progress for a given employee ID.
+
+This script retrieves TODO progress for a specified employee ID from the
+JSONPlaceholder API and displays the completed tasks for that employee along
+with their total number.
+
+Example:
+    $ python3 0-gather_data_from_an_API.py 1
+
+Attributes:
+    None
+"""
 import sys
 import requests
 
