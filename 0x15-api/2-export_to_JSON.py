@@ -1,4 +1,18 @@
 #!/usr/bin/python3
+"""
+Module to export employee's TODO progress to a JSON file.
+
+This script retrieves TODO progress for a given employee ID from the
+JSONPlaceholder API and exports the data to a JSON file. It includes
+functions to retrieve employee information, retrieve TODO progress,
+and export the data to a JSON file.
+
+Example:
+    $ python3 2-export_to_JSON.py 1
+
+Attributes:
+    None
+"""
 import sys
 import requests
 import json
