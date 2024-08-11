@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # script run Nginx and listen to port 80 of all the servers active IPv4 IPsz
-sudo apt-get update
-sudo apt-get install nginx -y
-sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo apt-get install nginx
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 sudo service nginx restart
