@@ -1,16 +1,20 @@
 #!/usr/bin/python3
-"""retriving top 10 posts drom a subbredit"""
+"""Retrieving top 10 posts from a subreddit"""
 import requests
 
 
 def top_ten(subreddit):
-    """a method to queries a given api and returns the top 10 hot posts"""
+    """A method to query a given API and return the top 10 hot posts"""
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    headres = {"User-Agent": "Mozilla/5.0"}
-    response = requests.get(url, headers=headres, allow_redirects=False)
+    headers = {"User-Agent": "my-user-agent"}
+    response = requests.get(url, headers=headers, allow_redirects=False)
+
     if response.status_code == 200:
-        all_posts = response.json()["data"]["children"]
-        for count in range(10):
-            print(all_posts[count]["data"]["title"])
+        try:
+            all_posts = response.json().get("data", {}).get("children", [])
+            for count, post in enumerate(all_posts[:10]):
+                print(post.get("data", {}).get("title"))
+        except ValueError:
+            print("None")
     else:
-        return ("None")
+        print("None")

@@ -1,15 +1,18 @@
 #!/usr/bin/python3
-"""module to retrive the number of subscribers on a subnet using reddit API"""
+"""Module to retrieve the number of subscribers
+on a subreddit using Reddit API"""
 import requests
 
 
-url = "https://www.reddit.com/r/{}/about.json"
-
-
 def number_of_subscribers(subreddit):
-    """function to get the number of subscribers on a subreddit"""
-    headers = {'User-agent': 'mir'}
-    response = requests.get(url.format(subreddit), headers=headers)
+    """Function to get the number of subscribers on a subreddit"""
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    headers = {'User-Agent': 'my-user-agent'}
+    response = requests.get(url, headers=headers, allow_redirects=False)
+
     if response.status_code == 200:
-        return response.json().get("data").get("subscribers")
+        try:
+            return response.json().get("data", {}).get("subscribers", 0)
+        except ValueError:
+            return 0
     return 0
