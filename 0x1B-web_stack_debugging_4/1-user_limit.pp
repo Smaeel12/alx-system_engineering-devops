@@ -1,5 +1,2 @@
 # A puppet script
-exec { 'fixing the security file':
-  command => "sed -i -E 's/(holberton (hard|soft) nofile )[0-9]+/1-1/' etc/security/limits.conf",
-  path    => ['/bin/', '/usr/bin/']
-}
+exec { '/usr/bin/env sed -i "s/holberton/foo/" /etc/security/limits.conf': }
